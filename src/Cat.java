@@ -26,6 +26,10 @@ public class Cat {
 		Graphics2D g2 = (Graphics2D) g;
 		int x=catX;
 		int y=catY;
+		// Draw the ears
+		g2.setColor(Color.black);
+		g2.fillOval(x + EYE_X - HEAD_DIMENSION/6, y - HEAD_DIMENSION/4, HEAD_DIMENSION/4, HEAD_DIMENSION/2);
+		g2.fillOval(x + EYE_X + EYE_SEPARATION, y - HEAD_DIMENSION/4, HEAD_DIMENSION/4, HEAD_DIMENSION/2);
 		// Draw the head
 		g2.setColor(Color.black);
 		g2.fillOval(x, y, HEAD_DIMENSION, HEAD_DIMENSION);
