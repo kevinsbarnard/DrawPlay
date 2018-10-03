@@ -1,6 +1,6 @@
-import javax.swing.JPanel;
-import java.awt.*;
-import java.awt.geom.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class Cat {
 	// drawing constants are private - noone needs to know what we're doing
@@ -30,6 +30,9 @@ public class Cat {
 		g2.setColor(Color.black);
 		g2.fillOval(x + EYE_X - HEAD_DIMENSION/6, y - HEAD_DIMENSION/4, HEAD_DIMENSION/4, HEAD_DIMENSION/2);
 		g2.fillOval(x + EYE_X + EYE_SEPARATION, y - HEAD_DIMENSION/4, HEAD_DIMENSION/4, HEAD_DIMENSION/2);
+		// Draw the body
+		g2.setColor(Color.black);
+		g2.fillOval(x, y+HEAD_DIMENSION/2, HEAD_DIMENSION, HEAD_DIMENSION);
 		// Draw the head
 		g2.setColor(Color.black);
 		g2.fillOval(x, y, HEAD_DIMENSION, HEAD_DIMENSION);
@@ -46,8 +49,8 @@ public class Cat {
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
 		g2.setColor(Color.black);
-		// Meow text appears below cat head, +10 places below 
+		// Meow text appears below cat head, +10 places below 40 places left
 		// so it doesn't overlap the drawing
-		g2.drawString("Meow", catX, catY+HEAD_DIMENSION+10);	
+		g2.drawString("Meow", catX-40, catY+HEAD_DIMENSION+10);	
 	}
 }
